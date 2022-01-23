@@ -1,11 +1,11 @@
 var game = new Phaser.Game(675, 353, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
 function preload() {
-    game.load.spritesheet('lutadorA', 'assets/karatea.png', 75, 75);
-    game.load.spritesheet('lutadorB', 'assets/karateb.png', 75, 75);
-    game.load.image('fundo', 'assets/fundonoite.png');
-    game.load.image('plata', 'assets/plataforma.png');
-//    game.load.image('ka', 'assets/Heart.ico');
+    game.load.spritesheet('lutadorA', 'karatea.png', 75, 75);
+    game.load.spritesheet('lutadorB', 'karateb.png', 75, 75);
+    game.load.image('fundo', 'fundonoite.png');
+    game.load.image('plata', 'plataforma.png');
+//    game.load.image('ka', 'Heart.ico');
 
 }
 
