@@ -19,6 +19,7 @@ function preload ()
 
 function create ()
 {
+    this.add.image(332, 175, 'sky');
 }
 
 function update ()
