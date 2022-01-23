@@ -5,8 +5,6 @@ function preload() {
     game.load.spritesheet('lutadorB', 'karateb.png', 75, 75);
     game.load.image('fundo', 'fundonoite.png');
     game.load.image('plata', 'plataforma.png');
-//    game.load.image('ka', 'Heart.ico');
-
 }
 
 var cursors;
