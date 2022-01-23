@@ -1,4 +1,3 @@
-var game = new Phaser.Game(675, 353, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
 var config = {
     type: Phaser.AUTO,
@@ -15,6 +14,7 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
+    this.load.image('fundo', 'fundonoite.png');
 }
 
 function create ()
