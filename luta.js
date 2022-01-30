@@ -49,7 +49,7 @@ function create ()
     this.add.image(0, 0, 'fundo').setOrigin(0, 0);
     
     plataformas = this.physics.add.staticGroup();
-    plataformas.create(0, 0, 'plata').setOrigin(0, 0).setScale(1).refreshBody();
+    plataformas.create(18, 100, 'plata').setOrigin(0, 0).setScale(1).refreshBody();
     //plataformas.create(18, chao, 'plata').setOrigin(0, 0);
     
     vidaA = this.add.rectangle(560, 320, valorVidaA, 10, 0x6666ff).setOrigin(0, 0);
