@@ -71,17 +71,18 @@ function create ()
 
     
     this.anims.create({ key: 'left',
-        frames: this.anims.generateFrameNumbers('lutadorB', { start: 9, end: 6 }),
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 0, end: 3 }),
         frameRate: 10, repeat: -1 });
 
      this.anims.create({  key: 'right',
-        frames: this.anims.generateFrameNumbers('lutadorB', { start: 6, end: 9 }),
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 0, end: 3 }),
         frameRate: 10,  repeat: -1   });
-
+    
     
     
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
+    this.physics.add.collider(lutB, lutA);
 }
 
 function update ()
