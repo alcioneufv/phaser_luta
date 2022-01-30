@@ -70,8 +70,8 @@ function create ()
     lutB.body.setGravityY(300)
 
     
-    this.physics.add.collider(lutA, platformas);
-    this.physics.add.collider(lutB, platformas);
+    this.physics.add.collider(lutA, plataformas);
+    this.physics.add.collider(lutB, plataformas);
 }
 
 function update ()
