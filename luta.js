@@ -60,7 +60,7 @@ function create ()
     lutA.setCollideWorldBounds(true);
     lutA.setVelocityY(50);
     
-
+    this.physics.add.collider(lutA, platformas);
 }
 
 function update ()
