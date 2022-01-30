@@ -51,8 +51,14 @@ function create ()
     
     vidaA = this.add.rectangle(560, 320, valorVidaA, 10, 0x6666ff).setOrigin(0, 0);
     vidaB = this.add.rectangle(20, 320, valorVidaB, 10, 0xff33cc).setOrigin(0, 0);
-    //vidaA = new Phaser.GameObjects.Rectangle(560, 320, valorVidaA, 10).setOrigin(0, 0);
-    //vidaB = new Phaser.Geom.Rectangle(20, 320, valorVidaB, 10).setOrigin(0, 0);;
+ 
+    //*******************
+    // Cria a lutador A *
+    //*******************
+    lutA = this.physics.add.sprite(530, 180, 'lutadorA').setOrigin(0, 0);
+    lutA.setBounce(0.2);
+    lutA.setCollideWorldBounds(true);
+    
 
 }
 
