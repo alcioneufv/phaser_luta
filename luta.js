@@ -62,7 +62,7 @@ function create ()
     
         
      this.anims.create({ key: 'idleA',
-        frames: this.anims.generateFrameNumbers('lutadorB', { start: 8, end: 10 }),
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 8, end: 10 }),
         frameRate: 10, repeat: -1 });
     
     lutA.anims.play('idleA', true);
