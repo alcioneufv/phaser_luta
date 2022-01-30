@@ -48,7 +48,7 @@ function create ()
     
     plataformas = this.physics.add.staticGroup();
 
-    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+//    plataformas.create(18, chao, 'plata').setScale(2).refreshBody();
     
  //   plataformas.create(18, chao, 'plata');
 
