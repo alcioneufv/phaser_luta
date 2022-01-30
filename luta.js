@@ -1,4 +1,3 @@
-
 var config = {
     type: Phaser.AUTO,
     width: 675,
@@ -33,7 +32,6 @@ var valorVidaA = 100;
 var valorVidaB = 100;
 var vidaA, vidaB;
 
-
 function preload ()
 {
     this.load.spritesheet('lutadorA', 'karatea.png', { frameWidth: 75, frameHeight: 75 });
@@ -49,8 +47,7 @@ function create ()
     this.add.image(0, 0, 'fundo').setOrigin(0, 0);
     
     plataformas = this.physics.add.staticGroup();
-    plataformas.create(18, 277, 'plata').setOrigin(0, 0).setScale(1).refreshBody();
-    //plataformas.create(18, chao, 'plata').setOrigin(0, 0);
+    plataformas.create(18, chao, 'plata').setOrigin(0, 0).setScale(1).refreshBody();
     
     vidaA = this.add.rectangle(560, 320, valorVidaA, 10, 0x6666ff).setOrigin(0, 0);
     vidaB = this.add.rectangle(20, 320, valorVidaB, 10, 0xff33cc).setOrigin(0, 0);
@@ -62,6 +59,7 @@ function create ()
     lutA.setBounce(0.2);
     lutA.setCollideWorldBounds(true);
     lutA.body.setGravityY(300)
+    
 
     //*******************
     // Cria a lutador B *
@@ -72,11 +70,33 @@ function create ()
     lutB.body.setGravityY(300)
 
     
+    this.anims.create({ key: 'left',
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 9, end: 6 }),
+        frameRate: 10, repeat: -1 });
+
+     this.anims.create({  key: 'right',
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 6, end: 9 }),
+        frameRate: 10,  repeat: -1   });
+
+    
+    
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
 }
 
 function update ()
 {
+    
+    if (cursors.left.isDown)
+    {
+        lutB.setVelocityX(-160);
+        lutB.anims.play('left', true);
+    }
+    else if (cursors.right.isDown)
+    {
+        lutB.setVelocityX(160);
+        lutB.anims.play('right', true);
+    }
+
 }
    
