@@ -48,9 +48,9 @@ function create ()
     
     plataformas = this.physics.add.staticGroup();
 
-    plataformas.create(18, chao, 'plata').setScale(2).refreshBody();
+  //  plataformas.create(18, chao, 'plata').setScale(2).refreshBody();
     
- //   plataformas.create(18, chao, 'plata');
+    plataformas.create(18, chao, 'plata');
 
     
     vidaA = new Phaser.Rectangle(560, 320, valorVidaA, 10);
