@@ -50,6 +50,7 @@ function create ()
     plataformas.create(18, chao, 'plata').setOrigin(0, 0);
     
     vidaA = this.add.rectangle(560, 320, valorVidaA, 10, 0x6666ff).setOrigin(0, 0);
+    vidaB = this.add.rectangle(20, 320, valorVidaB, 10, 0xff33cc).setOrigin(0, 0);
     //vidaA = new Phaser.GameObjects.Rectangle(560, 320, valorVidaA, 10).setOrigin(0, 0);
     //vidaB = new Phaser.Geom.Rectangle(20, 320, valorVidaB, 10).setOrigin(0, 0);;
 
