@@ -19,6 +19,7 @@ var config = {
 var game = new Phaser.Game(config);
 
 var cursors;
+var plataformas;
 var lutA;
 var lutB;
 var chao = 277;
@@ -60,8 +61,6 @@ function create ()
     lutA.setCollideWorldBounds(true);
     lutA.body.setGravityY(300)
 
-    
-    
     //*******************
     // Cria a lutador B *
     //*******************
