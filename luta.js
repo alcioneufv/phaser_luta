@@ -50,7 +50,7 @@ function create ()
 
   //  plataformas.create(18, chao, 'plata').setScale(2).refreshBody();
     
-    plataformas.create(18, chao, 'plata');
+    plataformas.create(18, chao, 'plata').setOrigin(0, 0);
 
     
     vidaA = new Phaser.Rectangle(560, 320, valorVidaA, 10);
