@@ -68,13 +68,11 @@ function create ()
     lutB = this.physics.add.sprite(230, 180, 'lutadorB').setOrigin(0, 0);
     lutB.setBounce(0.2);
     lutB.setCollideWorldBounds(true);
-    lutA.body.setGravityY(300)
+    lutB.body.setGravityY(300)
 
     
     this.physics.add.collider(lutA, platformas);
-
-    
-    this.physics.add.collider(lutA, platformas);
+    this.physics.add.collider(lutB, platformas);
 }
 
 function update ()
