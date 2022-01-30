@@ -18,6 +18,20 @@ var config = {
 
 var game = new Phaser.Game(config);
 
+var cursors;
+var lutA;
+var lutB;
+var chao = 277;
+var cont = 0;
+var key1;
+var key2;
+var acoes = ['chuta', 'mortal', 'soca', 'kika', 'bloqueia', 'bloqueia' ];
+var golpes = ['chuta',  'soca', 'voadora' ];
+var valorVidaA = 100;
+var valorVidaB = 100;
+var vidaA, vidaB;
+
+
 function preload ()
 {
     this.load.spritesheet('lutadorA', 'karatea.png', { frameWidth: 75, frameHeight: 75 });
@@ -28,7 +42,20 @@ function preload ()
 
 function create ()
 {
-    this.add.image(332, 175, 'fundo');
+    cursors = this.input.keyboard.createCursorKeys();
+
+    this.add.image(0, 0, 'fundo').setOrigin(0, 0);
+    
+    plataformas = this.physics.add.staticGroup();
+
+    platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+    
+    plataformas.create(18, chao, 'plata');
+
+    
+    vidaA = new Phaser.Rectangle(560, 320, valorVidaA, 10);
+    vidaB = new Phaser.Rectangle(20, 320, valorVidaB, 10);
+
 }
 
 function update ()
