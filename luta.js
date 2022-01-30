@@ -60,6 +60,12 @@ function create ()
     lutA.setCollideWorldBounds(true);
     lutA.body.setGravityY(300)
     
+        
+     this.anims.create({ key: 'idleA',
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 8, end: 10 }),
+        frameRate: 10, repeat: -1 });
+    
+    lutA.anims.play('idleA', true);
 
     //*******************
     // Cria a lutador B *
@@ -78,6 +84,11 @@ function create ()
         frames: this.anims.generateFrameNumbers('lutadorB', { start: 0, end: 3 }),
         frameRate: 10,  repeat: -1   });
     
+     this.anims.create({ key: 'idle',
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 0, end: 1 }),
+        frameRate: 10, repeat: -1 });
+    
+    lutB.anims.play('idle', true);
     
     
     this.physics.add.collider(lutA, plataformas);
@@ -98,6 +109,10 @@ function update ()
         lutB.setVelocityX(160);
         lutB.anims.play('right', true);
     }
+    else {
+        lutB.anims.play('idle', true);
+    }
+
 
 }
    
