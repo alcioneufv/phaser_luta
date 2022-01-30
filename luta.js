@@ -58,7 +58,7 @@ function create ()
     lutA = this.physics.add.sprite(530, 180, 'lutadorA').setOrigin(0, 0);
     lutA.setBounce(0.2);
     lutA.setCollideWorldBounds(true);
-    lutA.setVelocityY(-10);
+    lutA.setVelocityY(50);
     
 
 }
