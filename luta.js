@@ -58,7 +58,8 @@ function create ()
     lutA = this.physics.add.sprite(530, 180, 'lutadorA').setOrigin(0, 0);
     lutA.setBounce(0.2);
     lutA.setCollideWorldBounds(true);
-    lutA.setVelocityY(50);
+    lutA.body.setGravityY(300)
+
     
     
     //*******************
@@ -67,7 +68,8 @@ function create ()
     lutB = this.physics.add.sprite(230, 180, 'lutadorB').setOrigin(0, 0);
     lutB.setBounce(0.2);
     lutB.setCollideWorldBounds(true);
-    lutB.setVelocityY(50);
+    lutA.body.setGravityY(300)
+
     
     this.physics.add.collider(lutA, platformas);
 
