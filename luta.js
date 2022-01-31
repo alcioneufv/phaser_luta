@@ -100,6 +100,7 @@ function create ()
     this.physics.add.collider(lutB, plataformas);
 
     this.physics.add.collider(lutA, lutB, function(lutA, lutB) {
+        console.log('oi')
         lutB.anims.play('kick', true); 
     });
 }
