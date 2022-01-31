@@ -88,6 +88,11 @@ function create ()
         frames: this.anims.generateFrameNumbers('lutadorB', { start: 0, end: 1 }),
         frameRate: 2, repeat: -1 });
     
+     this.anims.create({ key: 'kick',
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 4, end: 9 }),
+        frameRate: 10});
+
+    
     lutB.anims.play('idle', true);
     
     
@@ -95,15 +100,12 @@ function create ()
     this.physics.add.collider(lutB, plataformas);
     this.physics.add.collider(lutB, lutA);
     
-    this.matter.world.on('collisionstart', function (event, lutB, lutA) {
-        lutB.gameObject.setTint(0xff0000);
-        lutB.gameObject.setTint(0x00ff00);
-
-    });
+     this.physics.add.overlap(lutB, lutA, fight, null, this);
 }
 
 function update ()
 {
+    lutB.anims.play('idle', true);
     lutB.setVelocity(0);
     if (cursors.left.isDown)
     {
@@ -121,4 +123,10 @@ function update ()
 
 
 }
+
+function fight (lutB, lutA)
+{
+    lutB.anims.play('kick', true);
+}
+
    
