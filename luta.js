@@ -101,6 +101,7 @@ function create ()
 
     var collider = this.physics.add.collider(lutB, lutA, null, function ()
     {
+        console.log('colidiu');
         lutB.anims.play('kick', true);
      }, this);
 }
