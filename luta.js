@@ -99,11 +99,9 @@ function create ()
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
 
-    var collider = this.physics.add.collider(lutB, lutA, null, function ()
-    {
-        console.log('colidiu');
-        lutB.anims.play('kick', true);
-     }, this);
+    this.physics.add.collider(lutA, lutB, function(lutA, lutB) {
+        lutB.anims.play('kick', true); 
+    });
 }
 
 function update ()
