@@ -105,7 +105,6 @@ function create ()
 
 function update ()
 {
-    lutB.anims.play('idle', true);
     lutB.setVelocity(0);
     if (cursors.left.isDown)
     {
