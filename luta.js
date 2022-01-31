@@ -89,21 +89,18 @@ function create ()
         frameRate: 2, repeat: -1 });
     
      this.anims.create({ key: 'kick',
-        frames: this.anims.generateFrameNumbers('lutadorB', { start: 4, end: 9 }),
+        frames: this.anims.generateFrameNumbers('lutadorB', { start: 4, end: 10 }),
         frameRate: 10});
 
-    
     lutB.anims.play('idle', true);
-    
     
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
 
-     var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB)
-    {
+     var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB) {
         lutB.anims.play('kick', true);
-        lutB.x-=10;
-    }, null, this);
+        lutB.x-=2;
+        }, null, this);
 }
 
 function update ()
@@ -119,8 +116,6 @@ function update ()
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
-
-
 }
 
    
