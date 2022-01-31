@@ -118,9 +118,6 @@ function update ()
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
-    else {
-        lutB.anims.play('idle', true);
-    }
 
 
 }
