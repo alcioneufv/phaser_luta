@@ -98,9 +98,11 @@ function create ()
     
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
-    this.physics.add.collider(lutB, lutA);
-    
-     this.physics.add.overlap(lutB, lutA, fight, null, this);
+
+    var collider = this.physics.add.collider(lutB, lutA, null, function ()
+    {
+        lutB.anims.play('kick', true);
+     }, this);
 }
 
 function update ()
@@ -121,11 +123,6 @@ function update ()
     }
 
 
-}
-
-function fight (lutB, lutA)
-{
-    lutB.anims.play('kick', true);
 }
 
    
