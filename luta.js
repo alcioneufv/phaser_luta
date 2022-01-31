@@ -101,12 +101,12 @@ function update ()
     lutB.setVelocity(0);
     if (cursors.left.isDown)
     {
-        lutB.setVelocity(-10);
+        lutB.setVelocity(-100);
         lutB.anims.play('left', true);
     }
     else if (cursors.right.isDown)
     {
-        lutB.setVelocity(10);
+        lutB.setVelocity(100);
         lutB.anims.play('right', true);
     }
     else {
