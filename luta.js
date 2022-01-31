@@ -59,11 +59,14 @@ function create ()
     lutA.setBounce(0.2);
     lutA.setCollideWorldBounds(true);
     lutA.body.setGravityY(300)
-    
         
-     this.anims.create({ key: 'idleA',
+    this.anims.create({ key: 'idleA',
         frames: this.anims.generateFrameNumbers('lutadorA', { start: 8, end: 10 }),
         frameRate: 2, repeat: -1 });
+    
+    this.anims.create({ key: 'deadA',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 23 }),
+        frameRate: 10});
     
     lutA.anims.play('idleA', true);
 
@@ -75,7 +78,6 @@ function create ()
     lutB.setCollideWorldBounds(true);
     lutB.body.setGravityY(300)
 
-    
     this.anims.create({ key: 'left',
         frames: this.anims.generateFrameNumbers('lutadorB', { start: 0, end: 3 }),
         frameRate: 10, repeat: -1 });
@@ -100,19 +102,17 @@ function create ()
      var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB) {
         lutB.anims.play('kick', true);
         lutB.x-=2;
+        lutA.anims.play('deadA', true);
         }, null, this);
 }
 
-function update ()
-{
+function update (){
     lutB.setVelocity(0);
-    if (cursors.left.isDown)
-    {
+    if (cursors.left.isDown) {
         lutB.setVelocityX(-100);
         lutB.anims.play('left', true);
     }
-    else if (cursors.right.isDown)
-    {
+    else if (cursors.right.isDown) {
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
