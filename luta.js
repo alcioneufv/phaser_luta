@@ -94,6 +94,12 @@ function create ()
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
     this.physics.add.collider(lutB, lutA);
+    
+    this.matter.world.on('collisionstart', function (event, lutB, lutA) {
+        lutB.gameObject.setTint(0xff0000);
+        lutB.gameObject.setTint(0x00ff00);
+
+    });
 }
 
 function update ()
