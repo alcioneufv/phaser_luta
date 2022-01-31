@@ -101,7 +101,7 @@ function create ()
 
      var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB)
     {
-        lutB.anims.play('kick', false);
+        lutB.anims.play('kick', true);
         lutB.x-=10;
     }, null, this);
 }
