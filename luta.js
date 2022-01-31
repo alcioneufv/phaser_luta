@@ -98,15 +98,15 @@ function create ()
 
 function update ()
 {
-    
+    lutB.setVelocity(0);
     if (cursors.left.isDown)
     {
-        lutB.x-=10;
+        lutB.setVelocity(-10);
         lutB.anims.play('left', true);
     }
     else if (cursors.right.isDown)
     {
-        lutB.x+=10;
+        lutB.setVelocity(10);
         lutB.anims.play('right', true);
     }
     else {
