@@ -68,9 +68,9 @@ function create ()
         frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 23 }),
         frameRate: 10});
  
-    this.anims.create({ key: 'fall1A',
+    teste =this.anims.create({ key: 'fall1A',
         frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 29 }),
-        frameRate: 5}).nextAnim('idleA');
+        frameRate: 5});
  
     lutA.anims.play('idleA', true);
 
