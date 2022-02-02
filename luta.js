@@ -124,7 +124,9 @@ function update (){
         lutB.anims.play('right', true);
     }
     if (lutA.anims.currentAnim.key == 'fall1A') {
-        console.log(lutA.anims.currentAnim)
+        if (lutA.anims.accumulator >200) {
+            lutA.anims.play('idleA', true);
+        }
     }
 
  
