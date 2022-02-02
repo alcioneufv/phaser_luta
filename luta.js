@@ -67,7 +67,11 @@ function create ()
     this.anims.create({ key: 'deadA',
         frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 23 }),
         frameRate: 10});
-    
+ 
+    this.anims.create({ key: 'fall1A',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 29 }),
+        frameRate: 5});
+ 
     lutA.anims.play('idleA', true);
 
     //*******************
@@ -92,7 +96,7 @@ function create ()
     
      this.anims.create({ key: 'kick',
         frames: this.anims.generateFrameNumbers('lutadorB', { start: 4, end: 10 }),
-        frameRate: 10});
+        frameRate: 20});
 
     lutB.anims.play('idle', true);
     
@@ -102,7 +106,7 @@ function create ()
      var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB) {
         lutB.anims.play('kick', true);
         lutB.x-=2;
-        lutA.anims.play('deadA', true);
+        lutA.anims.play('fall1A', true);
         }, null, this);
 }
 
