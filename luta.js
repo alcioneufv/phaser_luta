@@ -133,7 +133,7 @@ function update (){
         lutB.anims.play('right', true);
     }
     else if (cursors.up.isDown)    {
-        lutB.x+=5;
+        lutB.x+=2;
         lutB.anims.play('kick', true);
     }
 
