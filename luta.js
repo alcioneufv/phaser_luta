@@ -97,11 +97,7 @@ function create ()
      this.anims.create({ key: 'kick',
         frames: this.anims.generateFrameNumbers('lutadorB', { start: 4, end: 10 }),
         frameRate: 20});
-    
-     // Event handler for when the animation completes on our sprite
-     lutA.on(Phaser.Animations.Events.ANIMATION_COMPLETE, function () {
-                lutA.anims.play('idleA', true);
-        }, this);
+   
 
 
     lutB.anims.play('idle', true);
@@ -113,7 +109,6 @@ function create ()
         lutB.anims.play('kick', true);
         lutB.x-=2;
         lutA.anims.play('fall1A', true);
-
         }, null, this);
 }
 
