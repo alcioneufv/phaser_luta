@@ -106,7 +106,7 @@ function create () {
         if (lutB.anims.currentAnim.key == 'idleA') {     
            lutA.anims.play('fall1A', true);
         }
-        lutB.x-=2;
+        lutB.x-=5;
         }, null, this);
 }
 
@@ -133,6 +133,7 @@ function update (){
         lutB.anims.play('right', true);
     }
     else if (cursors.up.isDown)    {
+        lutB.x-=5;
         lutB.anims.play('kick', true);
     }
 
