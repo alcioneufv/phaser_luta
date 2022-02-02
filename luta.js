@@ -123,6 +123,7 @@ function update (){
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
+    console.log(lutA.anims.currentAnim.key)
 
  
 }
