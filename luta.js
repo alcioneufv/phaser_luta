@@ -32,16 +32,14 @@ var valorVidaA = 100;
 var valorVidaB = 100;
 var vidaA, vidaB;
 
-function preload ()
-{
+function preload () {
     this.load.spritesheet('lutadorA', 'karatea.png', { frameWidth: 75, frameHeight: 75 });
     this.load.spritesheet('lutadorB', 'karateb.png', { frameWidth: 75, frameHeight: 75 });
     this.load.image('fundo', 'fundonoite.png');
     this.load.image('plata', 'plataforma.png');
 }
 
-function create ()
-{
+function create () {
     cursors = this.input.keyboard.createCursorKeys();
 
     this.add.image(0, 0, 'fundo').setOrigin(0, 0);
@@ -97,9 +95,7 @@ function create ()
      this.anims.create({ key: 'kick',
         frames: this.anims.generateFrameNumbers('lutadorB', { start: 4, end: 10 }),
         frameRate: 20});
-   
-
-
+    
     lutB.anims.play('idle', true);
     
 
@@ -107,9 +103,10 @@ function create ()
     this.physics.add.collider(lutB, plataformas);
 
     var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB) {
-        lutB.anims.play('kick', true);
+        if (lutB.anims.currentAnim.key == 'idleA') {     
+           lutA.anims.play('fall1A', true);
+        }
         lutB.x-=2;
-        lutA.anims.play('fall1A', true);
         }, null, this);
 }
 
@@ -126,7 +123,6 @@ function update (){
         }
     }
 
-    
     lutB.setVelocity(0);
     if (cursors.left.isDown) {
         lutB.setVelocityX(-100);
@@ -136,7 +132,9 @@ function update (){
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
-
+    else if (cursors.up.isDown)    {
+        lutB.anims.play('kick', true);
+    }
 
  
 }
