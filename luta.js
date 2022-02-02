@@ -127,6 +127,7 @@ function update (){
       console.log(lutA.anims.currentAnim.key)
       console.log(lutA.anims.currentAnim.delay)
       console.log(lutA.anims.currentAnim.duration)
+      console.log(lutA.anims.accumulator)
     }
  
 }
