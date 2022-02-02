@@ -77,8 +77,7 @@ function create ()
     //*******************
     // Cria a lutador B *
     //*******************
-    const teste = this.add.sprite(230, 180, 'lutadorB').setOrigin(0, 0);
-    lutB = this.physics.add.sprite(teste);
+    lutB = this.physics.add.sprite(230, 180, 'lutadorB').setOrigin(0, 0);
     lutB.setBounce(0.2);
     lutB.setCollideWorldBounds(true);
     lutB.body.setGravityY(300)
