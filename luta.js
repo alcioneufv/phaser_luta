@@ -102,10 +102,14 @@ function create ()
 
     lutB.anims.play('idle', true);
     
+    lutB.on(Phaser.Animations.Events.ANIMATION_COMPLETE, function () {
+            console.log('terminou');
+        }, this);
+    
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
 
-     var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB) {
+    var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB) {
         lutB.anims.play('kick', true);
         lutB.x-=2;
         lutA.anims.play('fall1A', true);
@@ -121,6 +125,9 @@ function update (){
     else if (cursors.right.isDown) {
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
+    }
+    else {
+        if (lutA.anims.currentAnim.key != 'idleA' && lutA.currentAnim.key =
     }
  
 }
