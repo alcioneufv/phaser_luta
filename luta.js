@@ -109,7 +109,7 @@ function create ()
     var collider = this.physics.add.overlap(lutA, lutB, function (lutA, lutB) {
         lutB.anims.play('kick', true);
         lutB.x-=2;
-        lutA.anims.play('fall1A', true).anims.chain('idleA');
+        lutA.anims.play('fall1A', true);
         }, null, this);
 }
 
@@ -123,12 +123,7 @@ function update (){
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
-    if (lutA.anims.currentAnim.key=='fall1A') {
-      console.log(lutA.anims.currentAnim.key)
-      console.log(lutA.anims.currentAnim.delay)
-      console.log(lutA.anims.currentAnim.duration)
-      console.log(lutA.anims.accumulator)
-    }
+
  
 }
 
