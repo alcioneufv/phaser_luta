@@ -70,7 +70,7 @@ function create ()
  
     this.anims.create({ key: 'fall1A',
         frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 29 }),
-        frameRate: 5});
+        frameRate: 5}).nextAnim('idleA');
  
     lutA.anims.play('idleA', true);
 
