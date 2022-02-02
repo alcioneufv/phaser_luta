@@ -114,6 +114,19 @@ function create ()
 }
 
 function update (){
+    if (lutA.anims.currentAnim.key != 'idleA') {
+        if (lutA.anims.accumulator >200) {
+            lutA.anims.play('idleA', true);
+        }
+    }
+
+    if (lutB.anims.currentAnim.key != 'idle') {
+        if (lutB.anims.accumulator >200) {
+            lutB.anims.play('idle', true);
+        }
+    }
+
+    
     lutB.setVelocity(0);
     if (cursors.left.isDown) {
         lutB.setVelocityX(-100);
@@ -123,11 +136,7 @@ function update (){
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
-    if (lutA.anims.currentAnim.key == 'fall1A') {
-        if (lutA.anims.accumulator >200) {
-            lutA.anims.play('idleA', true);
-        }
-    }
+
 
  
 }
