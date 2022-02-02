@@ -77,7 +77,8 @@ function create ()
     //*******************
     // Cria a lutador B *
     //*******************
-    lutB = this.physics.add.sprite(230, 180, 'lutadorB').setOrigin(0, 0);
+    const teste = this.add.sprite(230, 180, 'lutadorB').setOrigin(0, 0);
+    lutB = this.physics.add.sprite(teste);
     lutB.setBounce(0.2);
     lutB.setCollideWorldBounds(true);
     lutB.body.setGravityY(300)
@@ -102,10 +103,7 @@ function create ()
 
     lutB.anims.play('idle', true);
     
-    lutB.on(Phaser.Animations.Events.ANIMATION_COMPLETE, function () {
-            console.log('terminou');
-        }, this);
-    
+
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
 
