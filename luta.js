@@ -107,6 +107,7 @@ function create ()
         lutB.anims.play('kick', true);
         lutB.x-=2;
         lutA.anims.play('fall1A', true);
+        lutB.chain([ 'fall1A','idleA' ]);
         }, null, this);
 }
 
@@ -120,10 +121,7 @@ function update (){
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
-    else {
-        lutB.anims.play('idle', true);
-        lutA.anims.play('idleA', true);
-    }
+ 
 }
 
    
