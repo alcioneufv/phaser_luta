@@ -126,9 +126,7 @@ function update (){
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
-    else {
-        if (lutA.anims.currentAnim.key != 'idleA' && lutA.currentAnim.key =
-    }
+
  
 }
 
