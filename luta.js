@@ -123,6 +123,9 @@ function update (){
         lutB.setVelocityX(100);
         lutB.anims.play('right', true);
     }
+    if (lutA.anims.currentAnim.key == 'fall1A') {
+        console.log(lutA.anims.currentAnim)
+    }
 
  
 }
