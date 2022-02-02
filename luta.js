@@ -103,7 +103,7 @@ function create () {
     this.physics.add.collider(lutB, plataformas);
 
     var collider = this.physics.add.collider(lutA, lutB, function (lutA, lutB) {
-        if (lutB.anims.currentAnim.key == 'idleA') {     
+        if (lutB.anims.currentAnim.key == 'kick') {     
            lutA.anims.play('fall1A', true);
         }
         lutB.x-=5;
