@@ -4,16 +4,9 @@ var config = {
     height: 353,
     physics: {
         default: 'arcade',
-        arcade: {
-            gravity: { y: 300 },
-            debug: true
-        }
+        arcade: {gravity: { y: 300 }, debug: false }
     },
-    scene: {
-        preload: preload,
-        create: create,
-        update: update
-    }
+    scene: { preload: preload, create: create, update: update     }
 };
 
 var game = new Phaser.Game(config);
@@ -24,10 +17,8 @@ var lutA;
 var lutB;
 var chao = 277;
 var cont = 0;
-var key1;
-var key2;
-var acoes = ['chuta', 'mortal', 'soca', 'kika', 'bloqueia', 'bloqueia' ];
-var golpes = ['chuta',  'soca', 'voadora' ];
+var actionsA = ['idleA', 'kickA', 'punchA', 'lowpunchA', 'blockA', 'mortalA' ];
+var statesA = ['aliveA','fall1A','fall2A', 'dyingA','deadA']
 var valorVidaA = 100;
 var valorVidaB = 100;
 var vidaA, vidaB;
@@ -59,16 +50,41 @@ function create () {
     lutA.body.setGravityY(300)
         
     this.anims.create({ key: 'idleA',
-        frames: this.anims.generateFrameNumbers('lutadorA', { start: 8, end: 10 }),
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 8, end: 9 }),
         frameRate: 2, repeat: -1 });
     
-    this.anims.create({ key: 'deadA',
+    this.anims.create({ key: 'kickA',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 0, end: 6 }),
+        frameRate: 5});
+
+    this.anims.create({ key: 'punchA',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 17, end: 19 }),
+        frameRate: 5});
+    
+    this.anims.create({ key: 'lowpunchA',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 11, end: 13 }),
+        frameRate: 5});
+    
+    this.anims.create({ key: 'blockA',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 9, end: 10 }),
+        frameRate: 5});
+    
+    this.anims.create({ key: 'mortalA',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 40, end: 49 }),
+        frameRate: 5});
+    
+    this.anims.create({ key: 'dyingA',
         frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 23 }),
         frameRate: 10});
  
-    teste =this.anims.create({ key: 'fall1A',
+    this.anims.create({ key: 'fall1A',
         frames: this.anims.generateFrameNumbers('lutadorA', { start: 20, end: 29 }),
         frameRate: 5});
+    
+    this.anims.create({ key: 'deadA',
+        frames: this.anims.generateFrameNumbers('lutadorA', { start: 23, end: 23 }),
+        frameRate: 10});
+
  
     lutA.anims.play('idleA', true);
 
