@@ -6,7 +6,7 @@ var config = {
         default: 'arcade',
         arcade: {gravity: { y: 300 }, debug: false }
     },
-    scene: { preload: preload, create: create, update: update     }
+    scene: { preload: preload, create: create, update: update }
 };
 
 var game = new Phaser.Game(config);
@@ -114,7 +114,6 @@ function create () {
     
     lutB.anims.play('idle', true);
     
-
     this.physics.add.collider(lutA, plataformas);
     this.physics.add.collider(lutB, plataformas);
 
@@ -127,8 +126,6 @@ function create () {
 }
 
 function update (){
-    
-    
     if (lutA.anims.accumulator >200 && lutA.anims.currentAnim.key != 'deadA') {
         let n = Math.floor(Math.random() * 100);
         if (n<90) {
@@ -158,8 +155,4 @@ function update (){
         lutB.x+=2;
         lutB.anims.play('kick', true);
     }
-
- 
 }
-
-   
