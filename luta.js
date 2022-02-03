@@ -129,15 +129,13 @@ function create () {
 function update (){
     
     
-    if (lutA.anims.currentAnim.key != 'idleA') {
-        if (lutA.anims.accumulator >200) {
-            let n = Math.floor(Math.random() * 20);
-            if (n<10) {
-                lutA.anims.play('idleA', true);
-            } else {
-                n = Math.floor(Math.random() * 100) % 6
-                lutA.anims.play(actionsA[n],true);
-            }
+    if (lutA.anims.accumulator >200) {
+        let n = Math.floor(Math.random() * 20);
+        if (n<10) {
+            lutA.anims.play('idleA', true);
+        } else {
+            n = Math.floor(Math.random() * 100) % 6
+            lutA.anims.play(actionsA[n],true);
         }
     }
 
