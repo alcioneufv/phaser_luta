@@ -130,6 +130,7 @@ function update (){
         let n = Math.floor(Math.random() * 100);
         if (n<90) {
             lutA.anims.play('idleA', true);
+            console.log(lutA.anims.getProgress());
         } else {
             n = Math.floor(Math.random() * 100) % 6
             lutA.anims.play(actionsA[n],true);
