@@ -137,7 +137,7 @@ function update (){
     }
       
     if (lutB.anims.currentAnim.key != 'idle') {
-        if (lutB.anims.accumulator >200) {
+        if (lutB.anims.getProgress()==1) {
             lutB.anims.play('idle', true);
         }
     }
