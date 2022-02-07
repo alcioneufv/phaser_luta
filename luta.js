@@ -126,7 +126,7 @@ function create () {
 }
 
 function update (){
-    if (lutA.anims.accumulator >200 && lutA.anims.currentAnim.key != 'deadA') {
+    if (lutA.anims.getProgress()==1 && lutA.anims.currentAnim.key != 'deadA') {
         let n = Math.floor(Math.random() * 100);
         if (n<90) {
             lutA.anims.play('idleA', true);
@@ -135,12 +135,7 @@ function update (){
             lutA.anims.play(actionsA[n],true);
         }
     }
-
-    if (lutA.anims.currentAnim.key != 'mortalA') {
-                console.log(lutA.anims.getProgress());
-    }
-    
-    
+      
     if (lutB.anims.currentAnim.key != 'idle') {
         if (lutB.anims.accumulator >200) {
             lutB.anims.play('idle', true);
