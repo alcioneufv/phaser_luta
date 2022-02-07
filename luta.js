@@ -133,12 +133,14 @@ function update (){
         } else {
             n = Math.floor(Math.random() * 100) % 6
             lutA.anims.play(actionsA[n],true);
-            if (lutA.anims.currentAnim.key != 'mortalA') {
-                console.log(lutA.anims.getProgress());
-            }
         }
     }
 
+    if (lutA.anims.currentAnim.key != 'mortalA') {
+                console.log(lutA.anims.getProgress());
+    }
+    
+    
     if (lutB.anims.currentAnim.key != 'idle') {
         if (lutB.anims.accumulator >200) {
             lutB.anims.play('idle', true);
