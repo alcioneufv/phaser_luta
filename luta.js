@@ -29,22 +29,9 @@ function preload () {
     this.load.spritesheet('lutadorB', 'karateb.png', { frameWidth: 75, frameHeight: 75 });
     this.load.image('fundo', 'fundonoite.png');
     this.load.image('plata', 'plataforma.png');
-    this.load.atlas('flares', 'flares.png', 'flares.json');
 }
 
 function create () {
-    particles = this.add.particles('flares');
-    particles.createEmitter({
-                frame: 'yellow',
-                radial: false,
-                x: 88,
-                y: { start: 0, end: 300, steps: 10 },
-                lifespan: 2000,
-                speedX: { min: 200, max: 400 },
-                quantity: 4,
-                gravityY: -50,
-                scale: { start: 0.6, end: 0, ease: 'Power3' },
-                blendMode: 'ADD'}); 
     
     cursors = this.input.keyboard.createCursorKeys();
 
@@ -138,7 +125,6 @@ function create () {
             
         }
         lutB.x-=5;
-        particles.emitParticleAt(0, 200);
         }, null, this);
 }
 
