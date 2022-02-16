@@ -22,6 +22,7 @@ var statesA = ['aliveA','fall1A','fall2A', 'dyingA','deadA']
 var valorVidaA = 100;
 var valorVidaB = 100;
 var vidaA, vidaB;
+var particles;
 
 function preload () {
     this.load.spritesheet('lutadorA', 'karatea.png', { frameWidth: 75, frameHeight: 75 });
@@ -32,6 +33,7 @@ function preload () {
 }
 
 function create () {
+    particles = this.add.particles('flares');
     cursors = this.input.keyboard.createCursorKeys();
 
     this.add.image(0, 0, 'fundo').setOrigin(0, 0);
