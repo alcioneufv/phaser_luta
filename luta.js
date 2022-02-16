@@ -34,6 +34,18 @@ function preload () {
 
 function create () {
     particles = this.add.particles('flares');
+    particles.createEmitter({
+                frame: 'yellow',
+                radial: false,
+                x: 88,
+                y: { start: 0, end: 300, steps: 10 },
+                lifespan: 2000,
+                speedX: { min: 200, max: 400 },
+                quantity: 4,
+                gravityY: -50,
+                scale: { start: 0.6, end: 0, ease: 'Power3' },
+                blendMode: 'ADD'}); 
+    
     cursors = this.input.keyboard.createCursorKeys();
 
     this.add.image(0, 0, 'fundo').setOrigin(0, 0);
@@ -126,18 +138,7 @@ function create () {
             
         }
         lutB.x-=5;
-                   particles.createEmitter({
-                frame: 'yellow',
-                radial: false,
-                x: 88,
-                y: { start: 0, end: 300, steps: 10 },
-                lifespan: 2000,
-                speedX: { min: 200, max: 400 },
-                quantity: 4,
-                gravityY: -50,
-                scale: { start: 0.6, end: 0, ease: 'Power3' },
-                blendMode: 'ADD'
-           }); 
+        particles.emitParticleAt(0, 200);
         }, null, this);
 }
 
