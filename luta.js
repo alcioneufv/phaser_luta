@@ -124,7 +124,9 @@ function create () {
         if (lutB.anims.currentAnim.key == 'kick') {     
            lutA.anims.play('fall1A', true);
             
-           particles.createEmitter({
+        }
+        lutB.x-=5;
+                   particles.createEmitter({
                 frame: 'yellow',
                 radial: false,
                 x: 88,
@@ -136,9 +138,6 @@ function create () {
                 scale: { start: 0.6, end: 0, ease: 'Power3' },
                 blendMode: 'ADD'
            }); 
-            
-        }
-        lutB.x-=5;
         }, null, this);
 }
 
