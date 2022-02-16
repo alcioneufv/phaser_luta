@@ -1,5 +1,5 @@
 var config = {
-    type: Phaser.AUTO,
+    type: Phaser.WEBGL,
     width: 675,
     height: 353,
     physics: {
@@ -28,6 +28,7 @@ function preload () {
     this.load.spritesheet('lutadorB', 'karateb.png', { frameWidth: 75, frameHeight: 75 });
     this.load.image('fundo', 'fundonoite.png');
     this.load.image('plata', 'plataforma.png');
+    this.load.atlas('flares', 'flares.png', 'flares.json');
 }
 
 function create () {
